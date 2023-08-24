@@ -9,8 +9,15 @@
 
 ---
 
-<p align="center">
-<img src="https://github.com/meatpiHQ/meatpi_ollie_v2/assets/94690098/69110a9d-9b1e-4320-9ca3-c0c38a044bd9" >
-</p>
+![image](https://github.com/meatpiHQ/meatpi_ollie_v2/assets/94690098/50aeb7da-0b82-41b8-ae74-c0a40db11433)
+
+
+# Pinout
+![image](https://github.com/meatpiHQ/meatpi_ollie_v2/assets/94690098/30aeeb6b-d68a-4a25-8dac-d5ee201695c7)
+
+### Note: If the switch is set to VT then UARTA/B voltage must be set by target board. Otherwise VT pins will follow the voltage level set by the swtich.
+
+# Drivers
+
 
 
