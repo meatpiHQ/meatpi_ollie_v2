@@ -40,7 +40,7 @@ If the installation is successful, the names of COM ports will change, each corr
 
 ## Linux
 
-[**Download**](https://github.com/meatpiHQ/meatpi_ollie_v2/files/12430130/ollie_v2_drivers_linux.zip) and follow the instructions below.
+[**Download**](https://github.com/meatpiHQ/meatpi_ollie_v2/files/13810865/ollie_v2_drivers_linux.zip) and follow the instructions below.
 
 ```
 sudo chmod +x ollie_v2.sh
