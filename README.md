@@ -40,6 +40,9 @@ If the installation is successful, the names of COM ports will change, each corr
 
 ## Linux
 
+Follow the instruction to build and install [CH344 linux drivers](https://github.com/WCHSoftGroup/ch343ser_linux) 
+
+### Renaming ports
 [**Download**](https://github.com/meatpiHQ/meatpi_ollie_v2/files/13810865/ollie_v2_drivers_linux.zip) and follow the instructions below.
 
 ```
