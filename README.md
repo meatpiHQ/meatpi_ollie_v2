@@ -40,7 +40,15 @@ If the installation is successful, the names of COM ports will change, each corr
 
 ## Linux
 
+### UART
 Follow the instruction to build and install [CH344 linux drivers](https://github.com/WCHSoftGroup/ch343ser_linux) 
+
+**Note: By default Ollie-v2 will not work as USB CDC-ACM. If you need to use in as a CDC-ACM device you need to remove resistor R20**
+
+<img width="429" alt="image" src="https://github.com/meatpiHQ/meatpi_ollie_v2/assets/94690098/d7396ae4-ea81-4a3c-9f4d-2ab10486b3b7">
+
+
+
 
 ### Renaming ports
 [**Download**](https://github.com/meatpiHQ/meatpi_ollie_v2/files/13810865/ollie_v2_drivers_linux.zip) and follow the instructions below.
@@ -48,7 +56,7 @@ Follow the instruction to build and install [CH344 linux drivers](https://github
 ```
 sudo chmod +x ollie_v2.sh
 sudo ./ollie_v2.sh     # This will create /dev/MEATPI-CAN0 /dev/MEATPI-RS232 /dev/MEATPI-RS485 /dev/MEATPI-UARTA /dev/MEATPI-UARTB
-sudo slcand -o -s6 /dev/MEATPI-CAN0 can0;
+sudo slcand -o -s6 /dev/MEATPI-CAN0 can0     # s6: sets the speed to 500 Kbit 
 sudo ifconfig can0 txqueuelen 1000
 sudo ifconfig can0 up
 ```
