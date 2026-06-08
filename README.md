@@ -23,6 +23,7 @@
     - [GS CAN on Linux](#gs-can-on-linux)
     - [GS CAN on Windows](#gs-can-on-windows)
   - [API](#api)
+  - [Python Examples](https://github.com/meatpiHQ/meatpi_ollie_v2/tree/main/examples/python)
 - [Flash new Firmware](#4-flash-new-firmware)
 
 
