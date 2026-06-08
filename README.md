@@ -116,7 +116,7 @@ candump can0
 
 Ollie-v2 implements the `gs_usb` (candleLight) protocol, which exposes the adapter as a native CAN interface to `python-can`. This is the **recommended** way to use Ollie-v2 for CAN work.
 
-Unlike the slower serial-line (slcand/SLCAN) path, `gs_usb` talks to the adapter over a dedicated USB bulk interface. This gives you significantly higher throughput, lower latency and accurate hardware timestamps — performance that matches, and in many cases beats, expensive high-end CAN adapters, at a fraction of the cost.
+Unlike the slower serial-line (slcand/SLCAN) path, `gs_usb` talks to the adapter over a dedicated USB bulk interface. This gives you significantly higher throughput, lower latency and accurate hardware timestamps performance that matches, and in many cases beats, expensive high-end CAN adapters, at a fraction of the cost.
 
 ### GS CAN on Linux
 
@@ -127,7 +127,11 @@ pip install python-can
 Bring the Linux CAN interface up before running the script, for example:
 
 ```bash
+sudo ip link set can0 down
+sudo ifconfig can0 txqueuelen 2000
 sudo ip link set can0 up type can bitrate 500000
+cansend can0 123#1122334455667788
+candump can0
 ```
 
 ### GS CAN on Windows
