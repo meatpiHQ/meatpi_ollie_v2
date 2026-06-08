@@ -20,6 +20,7 @@
   - [CAN on Windows](#can-on-windows)
   - [CAN on Linux](#can-on-windows)
   - [API](#api)
+- [Flash new Firmware](#4-flash-new-firmware)
 
 
 # 1. Pinout
@@ -112,5 +113,16 @@ candump can0
 
 - [API Documentation](https://drive.google.com/drive/folders/1qJelUAHGrn_YbNIP0Jk_KmNENG-hKbtl?usp=sharing)
 - [Programing examples](https://github.com/meatpiHQ/programming_examples/tree/master/CAN)
+
+# 4. Flash new Firmware
+
+1. While pressing the push button, plug in the USB-C cable.
+2. The Blue LED should start blinking
+3. Once in DFU mode, the device will appear as "USB Serial Device"
+4. If you have multiple USB Serial devices connected make sure to choose the right one
+5. Click the "Three Dots" button to select the firmware file
+6. Then Click flash button.
+
+<img width="802" height="430" alt="image" src="https://github.com/user-attachments/assets/c699942d-c9d7-4ce3-95b3-eab8efc0c3a0" />
 
 
