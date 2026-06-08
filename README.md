@@ -19,6 +19,9 @@
 - [CAN](#3-can)
   - [CAN on Windows](#can-on-windows)
   - [CAN on Linux](#can-on-windows)
+  - [GS USB (Recommended)](#gs-usb-recommended)
+    - [GS CAN on Linux](#gs-can-on-linux)
+    - [GS CAN on Windows](#gs-can-on-windows)
   - [API](#api)
 - [Flash new Firmware](#4-flash-new-firmware)
 
@@ -109,6 +112,47 @@ candump can0
 
 # can0  123   [8] 11 22 33 44 55 66 77 88
 ```
+## GS USB (Recommended)
+
+Ollie-v2 implements the `gs_usb` (candleLight) protocol, which exposes the adapter as a native CAN interface to `python-can`. This is the **recommended** way to use Ollie-v2 for CAN work.
+
+Unlike the slower serial-line (slcand/SLCAN) path, `gs_usb` talks to the adapter over a dedicated USB bulk interface. This gives you significantly higher throughput, lower latency and accurate hardware timestamps — performance that matches, and in many cases beats, expensive high-end CAN adapters, at a fraction of the cost.
+
+### GS CAN on Linux
+
+```bash
+pip install python-can
+```
+
+Bring the Linux CAN interface up before running the script, for example:
+
+```bash
+sudo ip link set can0 up type can bitrate 500000
+```
+
+### GS CAN on Windows
+
+```powershell
+pip install "python-can[gs-usb]"
+```
+
+On Windows, the GS USB interface also needs a libusb-compatible driver such as `libusbK`.
+
+#### Zadig setup
+
+1. Download and open Zadig: https://zadig.akeo.ie/
+2. Plug in the MeatPi adapter and start the `gs_usb` firmware.
+3. In Zadig, enable **Options -> List All Devices**.
+4. Select **MeatPi gs_usb CAN** (USB ID `1209:2323`) from the device list.
+5. Choose **libusbK** as the target driver.
+6. Click **Replace Driver** or **Install Driver**.
+
+When Zadig reports **Driver Installation: SUCCESS**, you're ready to go.
+
+![Zadig libusbK driver installation for MeatPi gs_usb CAN](images/zadig-gs-usb.png)
+
+After Zadig finishes, unplug and reconnect the adapter, then run the Windows GS CAN example.
+
 ## API
 
 - [API Documentation](https://drive.google.com/drive/folders/1qJelUAHGrn_YbNIP0Jk_KmNENG-hKbtl?usp=sharing)
